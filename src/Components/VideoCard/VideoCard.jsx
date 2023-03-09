@@ -1,11 +1,11 @@
 import React from 'react';
 import "./VideoCard.scss"
 
-const VideoCard = () => {
+const VideoCard = ({items}) => {
     return (
         <div className="video">
             <div className="video__thumbnail">
-                <img src="https://img.youtube.com/vi/PpXUTUXU7Qc/maxresdefault.jpg" alt="" />
+                <img src={items.thumbnails[2].url} alt="" />
             </div>
             <div className="video__details">
                 <div className="author">
@@ -13,10 +13,12 @@ const VideoCard = () => {
                 </div>
                 <div className="title">
                     <h3>
-                        Top 5 Programming Languages to Learn in 2021 | Best Programming Languages to Learn
+                        {items.title}
                     </h3>
-                    <a href="">FutureCoders</a>
-                    <span>10M Views • 3 Months Ago</span>
+                    <a href="">
+                        {items.channelName}
+                    </a>
+                    <span>{items.viewCountText} • {items.publishedTimeText}</span>
                 </div>
             </div>
         </div>
