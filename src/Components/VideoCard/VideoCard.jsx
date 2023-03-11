@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./VideoCard.scss"
 
-const VideoCard = ({items}) => {
+const VideoCard = ({ items }) => {
+    const [modal, setModal] = useState(false)
+    const [videoIframe, setVideoIframe] = useState("")
+    const handleHover = (id) => {
+        setVideoIframe(`${id}`)
+        setModal(true)
+
+        console.log(videoIframe)
+    }
+
+    const handleNotHover = () => {
+        setModal(false)
+        setVideoIframe("")
+    }
+    console.log(items);
     return (
-        <div className="video">
+        <div onMouseLeave={handleNotHover} onMouseEnter={() => handleHover(items.videoId)} className={`video ${modal ? "open-modal" : "close-modal"}`}>
             <div className="video__thumbnail">
-                <img src={items.thumbnails[2].url} alt="" />
+                {videoIframe == "" ?
+                    <img src={items.thumbnails[2].url} alt="" />
+                    :
+                    <iframe
+                        src={`https://www.youtube.com/embed/${videoIframe}?autoplay=1&mute=1`}>
+                    </iframe>
+
+
+                }
             </div>
             <div className="video__details">
                 <div className="author">

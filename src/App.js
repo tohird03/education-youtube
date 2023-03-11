@@ -24,7 +24,7 @@ function App() {
         <div class="videos">
           <div class="videos__container">
 
-          <Search/>
+          {/* <Search/> */}
 
             {
               videoData.map(item => {
@@ -32,6 +32,9 @@ function App() {
               })
             }
           </div>
+
+
+          
         </div>
       </div>
     </div>
