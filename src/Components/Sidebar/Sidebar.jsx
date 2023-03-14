@@ -19,7 +19,7 @@ const Sidebar = () => {
 
                 <LinkSidebar linkIcon="watch_later" text="Watch Later" link="watch-later" />
 
-                <LinkSidebar linkIcon="thumb_up" text="Liked Videos" link="liked-videos" />
+                <LinkSidebar linkIcon="thumb_up" text="Liked Videos" link="like" />
 
             </div>
             <hr />

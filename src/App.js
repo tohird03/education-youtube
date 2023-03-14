@@ -1,42 +1,19 @@
 import React, { useEffect, useState } from "react"
+import { Routes, Route } from "react-router-dom"
 import './App.scss';
-import Header from './Components/Header/Header';
-import Sidebar from './Components/Sidebar/Sidebar';
-import VideoCard from './Components/VideoCard/VideoCard';
-import { instance } from "./Api/instance"
-import Search from "./Pages/Search/Search";
-function App() {
-  const [videoData, setVideoData] = useState([])
 
-  useEffect(() => {
-    instance.get("/trending?type=C%20g%2C%20n%2C%20mo&hl=en&gl=US")
-      .then(response => setVideoData(response.data.contents))
-  }, []);
+import Home from "./Pages/Home/Home";
+import Like from "./Pages/Like/Like";
+import SingleVideo from "./Pages/SingleVideo/SingleVideo";
+function App() {
 
   return (
     <div className="App">
-      <Header />
-
-      <div className="mainBody">
-        <Sidebar />
-
-
-        <div class="videos">
-          <div class="videos__container">
-
-          {/* <Search/> */}
-
-            {
-              videoData.map(item => {
-                return <VideoCard items={item.video}/>
-              })
-            }
-          </div>
-
-
-          
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/like" element={<Like/>}/>
+        <Route path="/singlevideo/:videoId" element={<SingleVideo/>}/>
+      </Routes>
     </div>
   );
 }
