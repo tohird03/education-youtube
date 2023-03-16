@@ -10,6 +10,7 @@
     width: 230px;
     background-color: white;
     overflow-y: scroll;
+    border-right: 1px solid rgb(210, 210, 210);
 }
 
 .sidebar__categories {
@@ -24,6 +25,7 @@
     display: flex;
     align-items: center;
     padding: 12px 25px;
+    text-decoration: none;
 }
 
 .sidebar__category span {

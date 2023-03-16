@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-.header__search form {
+.header__search .header__search-wrapper {
     border: 1px solid #ddd;
     height: 35px;
     margin: 0;
@@ -45,10 +45,35 @@
     // height: 100%;
 }
 
-.header__search button {
+.header__search .submit {
     padding: 0;
     margin: 0;
     height: 100%;
     border: none;
     border-radius: 0;
+}
+
+.header__modal-closeBtn {
+    margin-left: auto;
+}
+
+.modal {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.modal-open {
+    width: 500px;
+    height: 400px;
+    top: 170px;
+    background-color: rgb(199, 198, 198);
+    position: relative;
+    z-index: 500;
+    border: 1px solid rgb(231, 228, 228);
+}
+
+.modal-close {
+    display: none;
 }

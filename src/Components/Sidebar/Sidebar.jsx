@@ -5,7 +5,7 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar__categories">
-                <LinkSidebar linkIcon="home" text="Home" link="home"/>
+                <LinkSidebar linkIcon="home" text="Home" link=""/>
                 <LinkSidebar linkIcon="local_fire_department" text="Trending" link="trending"/>
 
                 <LinkSidebar linkIcon="subscriptions" text="Subcriptions" link="subscriptions"/>
