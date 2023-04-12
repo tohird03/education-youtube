@@ -4,7 +4,7 @@
     color: rgb(96, 96, 96);
 }
 
-.header {
+.header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,6 +12,8 @@
     padding: 0 15px;
     border-bottom: 1px solid #d0d0d0;
 }
+
+
 
 .header__left {
     display: flex;
@@ -76,4 +78,8 @@
 
 .modal-close {
     display: none;
+}
+
+.acc_img {
+    border-radius: 50%;
 }

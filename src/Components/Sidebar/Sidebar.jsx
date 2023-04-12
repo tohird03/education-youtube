@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
+import { ContextTheme } from '../../Context/ThemeContext';
 import {LinkSidebar} from '../../Utils/Components';
 import "./Sidebar.scss"
 const Sidebar = () => {
+    const { theme, user } = useContext(ContextTheme)
     return (
-        <div className="sidebar">
+        <div className={theme ? "sidebar dark" : "sidebar light"}>
             <div className="sidebar__categories">
+                 { user ? <LinkSidebar linkIcon="account_circle" text={user.displayName} link="user-about"/> : "" }
                 <LinkSidebar linkIcon="home" text="Home" link=""/>
                 <LinkSidebar linkIcon="local_fire_department" text="Trending" link="trending"/>
 
